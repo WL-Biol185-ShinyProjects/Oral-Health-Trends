@@ -4,5 +4,5 @@ library(dplyr)
 install.packages("leaflet")
 library(leaflet)
 
-states <- geojsonio::geojson_read("json/us-states.geojson", what = "sp")
-class(states)
+leaflet() %>% setView(lng = -79.442778, lat = 37.783889, zoom = 12) %>% addTiles()
+
