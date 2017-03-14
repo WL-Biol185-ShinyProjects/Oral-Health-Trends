@@ -1,0 +1,39 @@
+---
+title: "webpage layout"
+output: html_document
+---
+
+```{r}
+library(shiny)
+install.packages("shinydashboard")
+library(shinydashboard)
+```
+```{r}
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody())
+
+ui <- dashboardPage(
+  
+      dashboardHeader(title = "Oral Health Trends"),
+  
+      dashboardSidebar( 
+        sidebarMenu(
+          menuItem("Home", tabName = "Home", icon = icon("Home")),
+          menuItem("Age 18+", tabName = "age18", icon = icon("Age 18+")))),
+  
+      dashboardBody(
+        tabItems(
+          tabItem(tabName = "Home",
+            fluidRow(
+              box(titlePanel("Welcome to our page!")),
+              box(mainPanel("info about our page and why its important")))),
+        
+          tabItem(tabName = "age18",
+              titlePanel("Adults aged 18+ who have visited a dentist or dental clinic in the past year")))))
+
+server <- function(input, output) { }
+
+shinyApp(ui, server)
+```
