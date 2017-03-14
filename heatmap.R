@@ -1,8 +1,10 @@
-library(ggplot2)
 library(tidyverse)
-library(dplyr)
-install.packages("leaflet")
 library(leaflet)
 
-leaflet() %>% setView(lng = -79.442778, lat = 37.783889, zoom = 12) %>% addTiles()
+states <- rgdal::readOGR("statedata.json", "OGRGeoJSON")
+
+leaflet(states) %>% setView(lng=-100, lat= 40, zoom=4) %>%
+  addTiles() %>%
+  addPolygons()
+    
 
