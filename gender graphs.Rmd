@@ -1,0 +1,19 @@
+---
+title: "gender graphs"
+output: html_document
+---
+```{r}
+library(shiny)
+library(dplyr)
+library(ggplot2)
+```
+```{r}
+gender <- filter(newtable, Break_Out_Category == "Gender", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year", Response == "Yes", Year == "2014")
+
+gender <- gender[-23,]
+```
+```{r}
+gender <- gender[-79,]
+```
+
+
