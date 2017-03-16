@@ -1,27 +1,40 @@
 library(shiny)
-<<<<<<< HEAD
 library(leaflet)
-=======
+library(shiny)
+install.packages("shinydashboard")
+library(shinydashboard)
 
-# Define UI for application that draws a histogram
-fluidPage(
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody())
+
+ui <- dashboardPage(
   
-  # Application title
-  titlePanel("Old Faithful Geyser Data"),
+  dashboardHeader(title = "Oral Health Trends"),
   
-  # Sidebar with a slider input for number of bins 
-  sidebarLayout(
-    sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
-    ),
-    
-    # Show a plot of the generated distribution
-    mainPanel(
-      plotOutput("distPlot")
-    )
-  )
->>>>>>> 1af7bb402442ccf1a1c3da840bb85d7b9ef0f00a
+  dashboardSidebar( 
+    sidebarMenu(
+      menuItem("Home", tabName = "Home", icon = icon("Home")),
+      menuItem("Age 18+", tabName = "age18", icon = icon("Age 18+")),
+      menuItem("Data Source", tabName = "datasource", icon = icon("Data Source")))),
+  
+  dashboardBody(
+    tabItems(
+      tabItem(tabName = "Home",
+              fluidPage(
+                titlePanel("Welcome to our page!"),
+                mainPanel("info about our page and why its important"))),
+      
+      tabItem(tabName = "age18",
+              titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
+              mainPanel(
+                tabsetPanel(
+                  tabPanel("Gender"),
+                  tabPanel("Age"),
+                  tabPanel("Race"),
+                  tabPanel("Income"),
+                  tabPanel("Education")))),
+      
+      tabItem(tabName = "datasource",
+              titlePanel("Data Source")))))
