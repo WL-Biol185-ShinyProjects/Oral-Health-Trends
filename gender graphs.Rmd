@@ -10,10 +10,26 @@ library(ggplot2)
 ```{r}
 gender <- filter(newtable, Break_Out_Category == "Gender", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year", Response == "Yes", Year == "2014")
 
-gender <- gender[-23,]
 ```
+
 ```{r}
+gender <- gender[-23,]
 gender <- gender[-79,]
 ```
 
+```{r}
+inputPanel(
+  selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc))
+)
+
+renderPlot({
+  gender %>%
+    filter(LocationDesc == input$LocationDesc) %>%
+    ggplot(aes(Break_Out, Data_Value)) + geom_bar(stat = "identity")
+})
+```
+
+```{r}
+ggplot(gender, aes(Break_Out, Data_Value, xlab(Gender), ylab(Percent))) + geom_bar(stat = "identity")
+```
 

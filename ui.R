@@ -5,11 +5,6 @@ install.packages("shinydashboard")
 library(shinydashboard)
 
 dashboardPage(
-  dashboardHeader(),
-  dashboardSidebar(),
-  dashboardBody())
-
-ui <- dashboardPage(
   
   dashboardHeader(title = "Oral Health Trends"),
   
@@ -30,7 +25,10 @@ ui <- dashboardPage(
               titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
               mainPanel(
                 tabsetPanel(
-                  tabPanel("Gender"),
+                  tabPanel("Gender",
+                    inputPanel(
+                      selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
+                      plotOutput("genderplot"))),
                   tabPanel("Age"),
                   tabPanel("Race"),
                   tabPanel("Income"),

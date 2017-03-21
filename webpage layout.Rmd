@@ -65,7 +65,8 @@ ui <- dashboardPage(
               titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
               mainPanel(
                 tabsetPanel(
-                  tabPanel("Gender"),
+                  tabPanel("Gender",
+                    inputPanel(selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)))),
                   tabPanel("Age"),
                   tabPanel("Race"),
                   tabPanel("Income"),
@@ -74,7 +75,10 @@ ui <- dashboardPage(
           tabItem(tabName = "datasource",
               titlePanel("Data Source")))))
 
-server <- function(input, output) { }
+server <- {renderPlot({
+            gender %>%
+              filter(LocationDesc == input$LocationDesc) %>%
+              ggplot(aes(Break_Out, Data_Value)) + geom_bar(stat = "identity")})}
 
 shinyApp(ui, server)
 ```
