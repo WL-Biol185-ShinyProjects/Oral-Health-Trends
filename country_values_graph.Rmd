@@ -16,5 +16,4 @@ ggplot(newtable1.5, aes(newtable1.5$'2012', newtable1.5$'2014', color= LocationD
 inputPanel(
                       selectInput("LocationDesc", label = "State", choices = unique(newtable1.5$LocationDesc)),
                       plotOutput("newtable1.5"))
-ggplot(newtable1.5, aes(newtable1.5$'2012', newtable1.5$'2014', color= LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point()
 ```
