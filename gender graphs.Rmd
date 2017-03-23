@@ -30,6 +30,13 @@ renderPlot({
 ```
 
 ```{r}
-ggplot(gender, aes(Break_Out, Data_Value, xlab(Gender), ylab(Percent))) + geom_bar(stat = "identity")
+renderPlot({
+  gender %>%
+    ggplot(aes(LocationAbbr, Data_Value)) + geom_bar(stat = "identity")
+})
+```
+
+```{r}
+ggplot(gender, aes(LocationAbbr, Data_Value) + xlab("State") + ylab("Percent")) + geom_bar(stat = "identity")
 ```
 
