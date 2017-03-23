@@ -26,9 +26,12 @@ dashboardPage(
               mainPanel(
                 tabsetPanel(
                   tabPanel("Gender",
-                    inputPanel(
-                      selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
-                      plotOutput("genderplot"))),
+                    box(
+                      inputPanel(
+                        selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
+                        plotOutput("genderplot"))),
+                    box(
+                      plotOutput("statewidegender"))),
                   tabPanel("Age"),
                   tabPanel("Race"),
                   tabPanel("Income"),
