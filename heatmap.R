@@ -3,11 +3,12 @@ library(leaflet)
 library(RColorBrewer)
 library(htmltools)
 
+colname(newtable.data_value)[colnames(newtable.data_value)== "LocationDesc"] <- NAME
+View(newtable.data_value)
 states <- rgdal::readOGR("statedata.json", "OGRGeoJSON")
 bins <- c(0, 50, 55, 60, 65, 70, 75, 80, 100)
 pal <- colorBin("YlGnBu", domain = newtable.data_value$Data_Value, bins = bins)
 newtable.data_value <- filter(newtable, Break_Out_Category == "None", Response == "Yes", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year")
-
 
 
 labels <- sprintf(
