@@ -1,0 +1,53 @@
+"","Year","LocationAbbr","LocationDesc","Indicator","Response","LocationID","GeoLocation","Break_Out_Category","Female","Male"
+"1",2014,"AK","Alaska","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",2,"(64.84507995700051, -147.72205903599973)","Gender",67.8,61.2
+"2",2014,"AL","Alabama","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",1,"(32.84057112200048, -86.63186076199969)","Gender",61,58.9
+"3",2014,"AR","Arkansas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",5,"(34.74865012400045, -92.27449074299966)","Gender",59.1,55
+"4",2014,"AZ","Arizona","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",4,"(34.865970280000454, -111.76381127699972)","Gender",61.1,56.9
+"5",2014,"CA","California","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",6,"(37.63864012300047, -120.99999953799971)","Gender",67.3,62.7
+"6",2014,"CO","Colorado","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",8,"(38.843840757000464, -106.13361092099967)","Gender",69.8,64.2
+"7",2014,"CT","Connecticut","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",9,"(41.56266102000046, -72.64984095199964)","Gender",77.6,72
+"8",2014,"DC","District Columbia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",11,"(38.89037138500049, -77.03196112699965)","Gender",72.7,68.6
+"9",2014,"DE","Delaware","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",10,"(39.008830667000495, -75.57774116799965)","Gender",68.6,64.3
+"10",2014,"FL","Florida","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",12,"(28.932040377000476, -81.92896053899966)","Gender",63,60.9
+"11",2014,"GA","Georgia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",13,"(32.83968109300048, -83.62758034599966)","Gender",62.7,58.2
+"12",2014,"HI","Hawaii","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",15,"(21.304850435000446, -157.85774940299973)","Gender",76,67.1
+"13",2014,"IA","Iowa","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",19,"(42.46940091300047, -93.81649055599968)","Gender",73.5,65.2
+"14",2014,"ID","Idaho","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",16,"(43.682630005000476, -114.3637300419997)","Gender",67.2,61.3
+"15",2014,"IL","Illinois","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",17,"(40.48501028300046, -88.99771017799969)","Gender",67.1,60.6
+"16",2014,"IN","Indiana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",18,"(39.766910452000445, -86.14996019399968)","Gender",63.1,59.9
+"17",2014,"KS","Kansas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",20,"(38.34774030000045, -98.20078122699965)","Gender",69.6,64.9
+"18",2014,"KY","Kentucky","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",21,"(37.645970271000465, -84.77497104799966)","Gender",64.2,57.6
+"19",2014,"LA","Louisiana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",22,"(31.31266064400046, -92.44568007099969)","Gender",60.2,56.3
+"20",2014,"MA","Massachusetts","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",25,"(42.27687047000046, -72.08269067499964)","Gender",77.1,72.1
+"21",2014,"MD","Maryland","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",24,"(39.29058096400047, -76.60926011099963)","Gender",73.9,66.2
+"22",2014,"ME","Maine","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",23,"(45.254228894000505, -68.98503133599962)","Gender",65.1,62.1
+"23",2014,"MI","Michigan","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",26,"(44.6613195430005, -84.71439026999968)","Gender",72.5,64.5
+"24",2014,"MN","Minnesota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",27,"(46.35564873600049, -94.79420050299967)","Gender",75.8,69.3
+"25",2014,"MO","Missouri","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",29,"(38.635790776000476, -92.56630005299968)","Gender",61.8,55.2
+"26",2014,"MS","Mississippi","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",28,"(32.745510099000455, -89.53803082499968)","Gender",58.3,55.2
+"27",2014,"MT","Montana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",30,"(47.06652897200047, -109.42442064499971)","Gender",65.8,59.3
+"28",2014,"NC","North Carolina","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",37,"(35.466220975000454, -79.15925046299964)","Gender",66.5,61.6
+"29",2014,"ND","North Dakota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",38,"(47.47531977900047, -100.11842104899966)","Gender",72.3,58.9
+"30",2014,"NE","Nebraska","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",31,"(41.6410409880005, -99.36572062299967)","Gender",69.5,63.2
+"31",2014,"NH","New Hampshire","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",33,"(43.65595011300047, -71.50036091999965)","Gender",72.7,66.1
+"32",2014,"NJ","New Jersey","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",34,"(40.13057004800049, -74.27369128799967)","Gender",72.3,67.8
+"33",2014,"NM","New Mexico","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",35,"(34.52088095200048, -106.24058098499967)","Gender",66.4,56.1
+"34",2014,"NV","Nevada","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",32,"(39.493240390000494, -117.07184056399967)","Gender",63.9,55.9
+"35",2014,"NY","New York","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",36,"(42.82700103200045, -75.54397042699964)","Gender",70.9,63.4
+"36",2014,"OH","Ohio","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",39,"(40.06021014100048, -82.40426005599966)","Gender",68.6,61.9
+"37",2014,"OK","Oklahoma","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",40,"(35.47203135600046, -97.52107021399968)","Gender",59.2,54.3
+"38",2014,"OR","Oregon","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",41,"(44.56744942400047, -120.15503132599969)","Gender",68.7,62.5
+"39",2014,"PA","Pennsylvania","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",42,"(40.79373015200048, -77.86070029399963)","Gender",69.9,63.6
+"40",2014,"RI","Rhode Island","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",44,"(41.70828019300046, -71.52247031399963)","Gender",74.3,69.6
+"41",2014,"SC","South Carolina","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",45,"(33.998821303000454, -81.04537120699968)","Gender",60.2,56.3
+"42",2014,"SD","South Dakota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",46,"(44.353130053000484, -100.3735306369997)","Gender",74.2,66.8
+"43",2014,"TN","Tennessee","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",47,"(35.68094058000048, -85.77449091399967)","Gender",59.2,57.3
+"44",2014,"TX","Texas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",48,"(31.827240407000488, -99.42677020599967)","Gender",61.5,54.7
+"45",2014,"US","United States","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",NA,NA,"Gender",67.1,61.6
+"46",2014,"UT","Utah","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",49,"(39.360700171000474, -111.58713063499971)","Gender",71.9,65.8
+"47",2014,"VA","Virginia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",51,"(37.54268067400045, -78.45789046299967)","Gender",71,67.5
+"48",2014,"VT","Vermont","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",50,"(43.62538123900049, -72.51764079099962)","Gender",75.5,68.7
+"49",2014,"WA","Washington","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",53,"(47.52227862900048, -120.47001078999972)","Gender",69.6,64.3
+"50",2014,"WI","Wisconsin","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",55,"(44.39319117400049, -89.81637074199966)","Gender",73.7,66.5
+"51",2014,"WV","West Virginia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",54,"(38.66551020200046, -80.71264013499967)","Gender",57.5,50.6
+"52",2014,"WY","Wyoming","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",56,"(43.23554134300048, -108.10983035299967)","Gender",67.8,62.3

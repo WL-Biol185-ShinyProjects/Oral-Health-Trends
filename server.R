@@ -8,7 +8,7 @@ function(input, output) {
         ggplot(aes(Break_Out, Data_Value)) + xlab("Gender") + ylab("Percent") + geom_bar(stat = "identity")})
   
   output$statewidegender <- renderPlot({
-      gender2 %>%
+      genderB %>%
         ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point()})
 
 }
