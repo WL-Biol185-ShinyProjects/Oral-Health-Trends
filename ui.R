@@ -26,11 +26,11 @@ dashboardPage(
               mainPanel(
                 tabsetPanel(
                   tabPanel("Gender",
-                    box(
+                    box("Comparing gender within a state:",
                       inputPanel(
                         selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
                         plotOutput("genderplot"))),
-                    box(
+                    box("Countrywide comparison of gender data:",
                       plotOutput("statewidegender"))),
                   tabPanel("Age"),
                   tabPanel("Race"),
