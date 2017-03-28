@@ -7,13 +7,24 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+```{r}
 library(ggplot2)
 library(shiny)
 library(tidyr)
+countryplot <- read.csv("newtable1_5.csv")
+```
 
 ```{r}
-ggplot(newtable1.5, aes(newtable1.5$'2012', newtable1.5$'2014', color= LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point()
+ggplot(countryplot, aes(countryplot$'X2012', countryplot$'X2014', color= LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point()
+```
+```{r}
 inputPanel(
-                      selectInput("LocationDesc", label = "State", choices = unique(newtable1.5$LocationDesc)),
-                      plotOutput("newtable1.5"))
+  selectInput("LocationDesc", label = "State", choices = unique(countryplot$LocationDesc))
+)
+                      
+renderPlot({
+  countryplot%>%
+  filter(LocationDesc == input$LocationDesc) %>%
+  ggplot(countryplot, aes(countryplot$'X2012', countryplot$'X2014', color= LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()
+})
 ```
