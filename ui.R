@@ -1,8 +1,8 @@
 library(shiny)
 library(leaflet)
-library(shiny)
 install.packages("shinydashboard")
 library(shinydashboard)
+library(ggplot2)
 
 dashboardPage(
   
