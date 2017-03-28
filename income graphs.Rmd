@@ -1,0 +1,18 @@
+---
+title: "income graphs"
+output: html_document
+---
+
+```{r}
+library(shiny)
+library(dplyr)
+library(ggplot2)
+```
+```{r}
+income <- filter(newtable, Break_Out_Category == "Income", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year", Response == "Yes", Year == "2014", LocationDesc != "Guam", LocationDesc != "Puerto Rico")
+```
+
+```{r}
+ggplot(income, aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity")
+```
+

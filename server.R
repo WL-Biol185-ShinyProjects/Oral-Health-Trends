@@ -12,4 +12,18 @@ function(input, output) {
       genderB %>%
         ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point()})
 
-}
+  output$raceplot <- renderPlot({
+     race %>%
+        filter(LocationDesc == input$LocationDesc) %>%
+        ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")})
+
+  output$statewideblack <- renderPlot({
+      raceB %>%
+        ggplot(aes(LocationDesc, Black)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity")})
+  
+  output$incomeplot <- renderPlot({
+      income %>%
+        filter(LocationDesc == input$LocationDesc) %>%
+        ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity")})
+  
+  }

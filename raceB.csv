@@ -1,0 +1,53 @@
+"","Year","LocationAbbr","LocationDesc","Indicator","Response","LocationID","GeoLocation","Break_Out_Category","Black","Hispanic","MultiRacial","Other","White"
+"1",2014,"AK","Alaska","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",2,"(64.84507995700051, -147.72205903599973)","Race",57.5,62.8,76.6,58,66.1
+"2",2014,"AL","Alabama","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",1,"(32.84057112200048, -86.63186076199969)","Race",53,68.7,50.5,56.7,62.5
+"3",2014,"AR","Arkansas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",5,"(34.74865012400045, -92.27449074299966)","Race",54.1,56,48.8,41.2,58.4
+"4",2014,"AZ","Arizona","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",4,"(34.865970280000454, -111.76381127699972)","Race",54.8,47.8,54.1,58.4,64.5
+"5",2014,"CA","California","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",6,"(37.63864012300047, -120.99999953799971)","Race",56.3,55,58.4,71,72.5
+"6",2014,"CO","Colorado","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",8,"(38.843840757000464, -106.13361092099967)","Race",55.3,53.9,65,67.2,71.1
+"7",2014,"CT","Connecticut","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",9,"(41.56266102000046, -72.64984095199964)","Race",64.2,64.9,58.8,70.8,78.9
+"8",2014,"DC","District Columbia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",11,"(38.89037138500049, -77.03196112699965)","Race",64.2,61.6,65.5,74.2,80.3
+"9",2014,"DE","Delaware","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",10,"(39.008830667000495, -75.57774116799965)","Race",63.7,42.3,71.4,64.7,70.3
+"10",2014,"FL","Florida","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",12,"(28.932040377000476, -81.92896053899966)","Race",56,55.8,59.5,63.7,65.7
+"11",2014,"GA","Georgia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",13,"(32.83968109300048, -83.62758034599966)","Race",52.8,46.2,70.3,63.4,66.1
+"12",2014,"HI","Hawaii","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",15,"(21.304850435000446, -157.85774940299973)","Race",51.3,69.5,64.9,76,72.9
+"13",2014,"IA","Iowa","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",19,"(42.46940091300047, -93.81649055599968)","Race",58.3,60.9,62.8,56.2,70.7
+"14",2014,"ID","Idaho","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",16,"(43.682630005000476, -114.3637300419997)","Race",NA,53.2,68.3,58.6,66
+"15",2014,"IL","Illinois","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",17,"(40.48501028300046, -88.99771017799969)","Race",58.3,48.1,67.3,62.6,69.1
+"16",2014,"IN","Indiana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",18,"(39.766910452000445, -86.14996019399968)","Race",55.1,47.3,58.3,57.2,63.4
+"17",2014,"KS","Kansas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",20,"(38.34774030000045, -98.20078122699965)","Race",58.4,54.7,50.8,62.3,69.8
+"18",2014,"KY","Kentucky","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",21,"(37.645970271000465, -84.77497104799966)","Race",55.1,65.3,43,53.9,61.6
+"19",2014,"LA","Louisiana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",22,"(31.31266064400046, -92.44568007099969)","Race",49.4,63.2,60.7,60,62.4
+"20",2014,"MA","Massachusetts","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",25,"(42.27687047000046, -72.08269067499964)","Race",65.6,67.9,64.1,73.7,76.6
+"21",2014,"MD","Maryland","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",24,"(39.29058096400047, -76.60926011099963)","Race",64.7,59.1,68.3,70.1,74.7
+"22",2014,"ME","Maine","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",23,"(45.254228894000505, -68.98503133599962)","Race",NA,48,41.6,51.9,64.8
+"23",2014,"MI","Michigan","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",26,"(44.6613195430005, -84.71439026999968)","Race",54.9,63.2,61,69.3,71.4
+"24",2014,"MN","Minnesota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",27,"(46.35564873600049, -94.79420050299967)","Race",62.5,53.3,66.5,63.9,74.8
+"25",2014,"MO","Missouri","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",29,"(38.635790776000476, -92.56630005299968)","Race",54.4,52.9,38.6,59.6,59.8
+"26",2014,"MS","Mississippi","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",28,"(32.745510099000455, -89.53803082499968)","Race",49.2,NA,NA,57.7,60.5
+"27",2014,"MT","Montana","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",30,"(47.06652897200047, -109.42442064499971)","Race",NA,50.1,37.1,56.2,63.9
+"28",2014,"NC","North Carolina","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",37,"(35.466220975000454, -79.15925046299964)","Race",55.2,43,60.7,63.8,69.3
+"29",2014,"ND","North Dakota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",38,"(47.47531977900047, -100.11842104899966)","Race",NA,44.8,67.6,48.6,67.6
+"30",2014,"NE","Nebraska","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",31,"(41.6410409880005, -99.36572062299967)","Race",53.6,46.8,60,57.2,69.4
+"31",2014,"NH","New Hampshire","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",33,"(43.65595011300047, -71.50036091999965)","Race",NA,73.9,70.7,68.5,69.6
+"32",2014,"NJ","New Jersey","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",34,"(40.13057004800049, -74.27369128799967)","Race",60.3,58.3,66.4,65,76.8
+"33",2014,"NM","New Mexico","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",35,"(34.52088095200048, -106.24058098499967)","Race",56.4,55.8,49.9,62.7,67.3
+"34",2014,"NV","Nevada","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",32,"(39.493240390000494, -117.07184056399967)","Race",49.9,50.7,60.5,68.9,63.4
+"35",2014,"NY","New York","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",36,"(42.82700103200045, -75.54397042699964)","Race",59.2,63.2,52.6,60.5,72.1
+"36",2014,"OH","Ohio","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",39,"(40.06021014100048, -82.40426005599966)","Race",60.4,68.5,55.2,58.7,66.6
+"37",2014,"OK","Oklahoma","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",40,"(35.47203135600046, -97.52107021399968)","Race",54.6,45.3,54.8,55.5,58.6
+"38",2014,"OR","Oregon","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",41,"(44.56744942400047, -120.15503132599969)","Race",NA,56.9,67,64,66.7
+"39",2014,"PA","Pennsylvania","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",42,"(40.79373015200048, -77.86070029399963)","Race",54.3,55.2,58.3,68.3,69.3
+"40",2014,"RI","Rhode Island","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",44,"(41.70828019300046, -71.52247031399963)","Race",49.9,63.4,58.3,60.3,75.7
+"41",2014,"SC","South Carolina","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",45,"(33.998821303000454, -81.04537120699968)","Race",49.4,47.5,54.5,58.8,62.9
+"42",2014,"SD","South Dakota","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",46,"(44.353130053000484, -100.3735306369997)","Race",NA,57.9,50.5,64.5,72
+"43",2014,"TN","Tennessee","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",47,"(35.68094058000048, -85.77449091399967)","Race",57.1,46.9,NA,61.5,58.8
+"44",2014,"TX","Texas","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",48,"(31.827240407000488, -99.42677020599967)","Race",56.4,49.2,53.8,62.8,65.5
+"45",2014,"US","United States","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",NA,NA,"Race",56.5,54.2,59.2,65.8,68.4
+"46",2014,"UT","Utah","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",49,"(39.360700171000474, -111.58713063499971)","Race",50.9,54.5,62.4,62.9,71.7
+"47",2014,"VA","Virginia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",51,"(37.54268067400045, -78.45789046299967)","Race",62.8,61.8,62.5,65.3,72.5
+"48",2014,"VT","Vermont","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",50,"(43.62538123900049, -72.51764079099962)","Race",NA,NA,54.4,57.6,73
+"49",2014,"WA","Washington","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",53,"(47.52227862900048, -120.47001078999972)","Race",61,50.9,59,62.3,70.2
+"50",2014,"WI","Wisconsin","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",55,"(44.39319117400049, -89.81637074199966)","Race",55.2,44.9,46.9,62.2,73.1
+"51",2014,"WV","West Virginia","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",54,"(38.66551020200046, -80.71264013499967)","Race",46.1,62.4,45.4,41.7,54.6
+"52",2014,"WY","Wyoming","Adults aged 18+ who have visited a dentist or dental clinic in the past year","Yes",56,"(43.23554134300048, -108.10983035299967)","Race",NA,57.7,62,63.1,65.7

@@ -31,10 +31,20 @@ dashboardPage(
                         selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
                         plotOutput("genderplot"))),
                     box("Countrywide comparison of gender data:",
-                      plotOutput("statewidegender"))),
+                        plotOutput("statewidegender"))),
                   tabPanel("Age"),
-                  tabPanel("Race"),
-                  tabPanel("Income"),
+                  tabPanel("Race",
+                    box("Comparing race within a state:",
+                      inputPanel(
+                        selectInput("LocationDesc", label = "State", choices = unique(race$LocationDesc)),
+                        plotOutput("raceplot"))),
+                    box("Countrywide comparison of race data:",
+                        plotOutput("statewideblack"))),
+                  tabPanel("Income",
+                    box("Comparing income within a state:",
+                      inputPanel(
+                        selectInput("LocationDesc", label = "State", choices = unique(income$LocationDesc)),
+                        plotOutput("incomeplot")))),
                   tabPanel("Education")))),
       
       tabItem(tabName = "datasource",

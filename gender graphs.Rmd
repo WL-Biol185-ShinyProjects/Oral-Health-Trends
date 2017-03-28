@@ -40,4 +40,7 @@ renderPlot({
 ggplot(gender, aes(LocationAbbr, Data_Value) + xlab("State") + ylab("Percent")) + geom_bar(stat = "identity")
 ```
 
+```{r}
+
+
 

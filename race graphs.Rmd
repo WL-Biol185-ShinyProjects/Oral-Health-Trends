@@ -12,7 +12,15 @@ library(ggplot2)
 race <- filter(newtable, Break_Out_Category == "Race", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year", Response == "Yes", Year == "2014")
 ```
 
+```{r}
+ggplot(race, aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")
+```
+inputPanel(
+  selectInput("LocationDesc", label = "State", choices = unique(race$LocationDesc)),
+  plotOutput("raceplot"))
+  
 output$raceplot <- renderPlot({
-      race %>%
-        filter(LocationDesc == input$LocationDesc) %>%
-        ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")})
+  race %>%
+    filter(LocationDesc == input$LocationDesc) %>%
+    ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")})
+
