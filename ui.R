@@ -19,7 +19,7 @@ dashboardPage(
       tabItem(tabName = "Home",
               fluidPage(
                 titlePanel("Welcome to our page!"),
-                mainPanel("info about our page and why its important"))),
+                mainPanel("Our page analyzes trends in oral health care across the nation. We look at different age groups, race, income levels, gender, and differences in education."))),
       
       tabItem(tabName = "age18",
               titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
@@ -32,7 +32,11 @@ dashboardPage(
                         plotOutput("genderplot"))),
                     box("Countrywide comparison of gender data:",
                         plotOutput("statewidegender"))),
-                  tabPanel("Age"),
+                  tabPanel("Age",
+                    box("Comparing age within a state:",
+                        inputPanel(
+                          selectInput("LocationDesc", label = "State", choices = unique(age5$LocationDesc)),
+                          plotOutput("age5plot")))),
                   tabPanel("Race",
                     box("Comparing race within a state:",
                       inputPanel(
