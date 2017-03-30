@@ -51,7 +51,12 @@ dashboardPage(
                       inputPanel(
                         selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
                         plotOutput("incomeplot")))),
-                  tabPanel("Education")))),
+                  tabPanel("Education",
+                      box("Comparing education levels within a state:",
+                          inputPanel(
+                            selectInput("LocationDesc6", label = "State", choice = unique(education$LocationDesc)),
+                            plotOutput("educationplot")))),
+                          
       
       tabItem(tabName = "datasource",
               titlePanel("Data Source")))))

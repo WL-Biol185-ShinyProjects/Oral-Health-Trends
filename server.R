@@ -35,4 +35,9 @@ function(input, output) {
     age5 %>%
       ggplot(aes(Break_Out, Data_Value, color = LocationAbbr)) + geom_point()})
   
+  output$educationplot <- renderPlot({
+    education %>% 
+      ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity")
+  })
+  
   }
