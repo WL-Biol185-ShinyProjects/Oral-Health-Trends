@@ -10,7 +10,7 @@ function(input, output) {
   
   output$statewidegender <- renderPlot({
       genderB %>%
-        ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point() + guides(color=guide_legend(title="State:"))})
+        ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point()})
   
   output$age5plot <- renderPlot({
     age5 %>%
@@ -36,8 +36,10 @@ function(input, output) {
       ggplot(aes(Break_Out, Data_Value, color = LocationAbbr)) + geom_point()})
   
   output$educationplot <- renderPlot({
-    education %>% 
-      ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity")
+    education2 %>%
+      filter(LocationDesc == input$LocationDesc6) %>%
+      ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle=60, hjust=1))
   })
+  
   
   }
