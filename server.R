@@ -31,9 +31,10 @@ function(input, output) {
         filter(LocationDesc == input$LocationDesc4) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
-  output$countryplot <- renderPlot({
-    countryplot%>% 
-      filter(LocationDesc == input$LocationDesc5) %>% 
-      ggplot(aes(X2012, X2014, color=LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()})
+  output$education <- renderPlot({
+    education %>%
+      filter(LocationDesc == input$LocationDesc6) %>%
+      ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
+  
   
   }
