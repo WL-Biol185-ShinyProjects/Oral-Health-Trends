@@ -30,3 +30,19 @@ renderPlot({
   ggplot(aes(X2012, X2014, color=LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()
 })
 ```
+ tabPanel("2012vs.2014",
+                           box("Looking at difference between 2012 and 2014 values by State:",
+                               inputPanel(
+                                 selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
+                                 plotOutput("countryplot")))),
+                                 
+                                  tabPanel("2012vs.2014",
+                           box("Looking at difference between 2012 and 2014 values by State:",
+                               inputPanel(
+                                 selectInput("LocationDesc5", label = "State", choices = output$countryplot <- 
+                                 
+                                 
+output$countryplot <- renderPlot({
+    countryplot%>% 
+      filter(LocationDesc == input$LocationDesc5) %>% 
+      ggplot(aes(X2012, X2014, color=LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()})
