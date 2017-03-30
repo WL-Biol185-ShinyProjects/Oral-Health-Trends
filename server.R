@@ -10,7 +10,7 @@ function(input, output) {
   
   output$statewidegender <- renderPlot({
       genderB %>%
-        ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point()})
+        ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point() + guides(color=guide_legend(title="State:"))})
   
   output$age5plot <- renderPlot({
     age5 %>%
