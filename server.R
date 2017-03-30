@@ -14,7 +14,7 @@ function(input, output) {
   
   output$age5plot <- renderPlot({
     age5 %>%
-        filter(LocationDesc == input$LocationDesc) %>%
+        filter(LocationDesc == input$LocationDesc2) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Age Group") + ylab("Percent") + geom_bar(stat="identity")})
 
   output$raceplot <- renderPlot({
