@@ -5,7 +5,7 @@ function(input, output) {
   
   output$genderplot <- renderPlot({
       gender %>%
-        filter(LocationDesc == input$LocationDesc) %>%
+        filter(LocationDesc == input$LocationDesc1) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Gender") + ylab("Percent") + geom_bar(stat = "identity")})
   
   output$statewidegender <- renderPlot({
@@ -14,7 +14,7 @@ function(input, output) {
 
   output$raceplot <- renderPlot({
      race %>%
-        filter(LocationDesc == input$LocationDesc) %>%
+        filter(LocationDesc == input$LocationDesc3) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")})
 
   output$statewideblack <- renderPlot({
@@ -23,7 +23,7 @@ function(input, output) {
   
   output$incomeplot <- renderPlot({
       income %>%
-        filter(LocationDesc == input$LocationDesc) %>%
+        filter(LocationDesc == input$LocationDesc4) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity")})
   
   }

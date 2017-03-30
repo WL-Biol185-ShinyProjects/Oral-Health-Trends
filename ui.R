@@ -28,7 +28,7 @@ dashboardPage(
                   tabPanel("Gender",
                     box("Comparing gender within a state:",
                       inputPanel(
-                        selectInput("LocationDesc", label = "State", choices = unique(gender$LocationDesc)),
+                        selectInput("LocationDesc1", label = "State", choices = unique(gender$LocationDesc)),
                         plotOutput("genderplot"))),
                     box("Countrywide comparison of gender data:",
                         plotOutput("statewidegender"))),
@@ -36,14 +36,14 @@ dashboardPage(
                   tabPanel("Race",
                     box("Comparing race within a state:",
                       inputPanel(
-                        selectInput("LocationDesc", label = "State", choices = unique(race$LocationDesc)),
+                        selectInput("LocationDesc3", label = "State", choices = unique(race$LocationDesc)),
                         plotOutput("raceplot"))),
                     box("Countrywide comparison of race data:",
                         plotOutput("statewideblack"))),
                   tabPanel("Income",
                     box("Comparing income within a state:",
                       inputPanel(
-                        selectInput("LocationDesc", label = "State", choices = unique(income$LocationDesc)),
+                        selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
                         plotOutput("incomeplot")))),
                   tabPanel("Education")))),
       
