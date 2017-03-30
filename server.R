@@ -31,4 +31,8 @@ function(input, output) {
         filter(LocationDesc == input$LocationDesc4) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity")})
   
+  output$statewideage <- renderPlot({
+    age5 %>%
+      ggplot(aes(Break_Out, Data_Value, color = LocationAbbr)) + geom_point()})
+  
   }

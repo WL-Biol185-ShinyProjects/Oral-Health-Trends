@@ -36,7 +36,9 @@ dashboardPage(
                     box("Comparing age within a state:",
                         inputPanel(
                           selectInput("LocationDesc2", label = "State", choices = unique(age5$LocationDesc)),
-                          plotOutput("age5plot")))),
+                          plotOutput("age5plot"))),
+                    box("Countrywide comparison of age data:",
+                        plotOutput("statewideage"))),
                   tabPanel("Race",
                     box("Comparing race within a state:",
                       inputPanel(
