@@ -11,6 +11,11 @@ function(input, output) {
   output$statewidegender <- renderPlot({
       genderB %>%
         ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point()})
+  
+  output$age5plot <- renderPlot({
+    age5 %>%
+        filter(LocationDesc == input$LocationDesc) %>%
+        ggplot(aes(Break_Out, Data_Value)) + xlab("Age Group") + ylab("Percent") + geom_bar(stat="identity")})
 
   output$raceplot <- renderPlot({
      race %>%
