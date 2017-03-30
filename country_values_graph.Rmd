@@ -16,17 +16,17 @@ countryplot <- read.csv("newtable1_5.csv")
 ```
 
 ```{r}
-ggplot(countryplot, aes(countryplot$'X2012', countryplot$'X2014', color= LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point()
+ggplot(countryplot, aes(X2012,X2014, color=LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point()
 ```
 ```{r}
 inputPanel(
-  selectInput("LocationDesc", label = "State", choices = unique(countryplot$LocationDesc))
+  selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc))
 )
 ```
 ```{r}
 renderPlot({
   countryplot%>% 
-  filter(LocationDesc == input$LocationDesc) %>% +
-  ggplot(countryplot, aes_(countryplot$'X2012', countryplot$'X2014', color= LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()
+  filter(LocationDesc == input$LocationDesc5) %>% 
+  ggplot(aes(X2012, X2014, color=LocationDesc)) +xlab("2012_values") + ylab("2014_values")+geom_point()
 })
 ```
