@@ -54,14 +54,8 @@ dashboardPage(
                   tabPanel("Education",
                       box("Comparing education levels within a state:",
                           inputPanel(
-                            selectInput("LocationDesc6", label = "State", choice = unique(education$LocationDesc)),
-                            plotOutput("educationplot")))),
-                  tabPanel("2012vs.2014",
-                           box("Looking at difference between 2012 and 2014 values by State:",
-                               inputPanel(
-                                 selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
-                                 plotOutput("countryplot")))),
-                          
+                            selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
+                            plotOutput("educationplot"))))))),
       
       tabItem(tabName = "datasource",
               titlePanel("Data Source")))))

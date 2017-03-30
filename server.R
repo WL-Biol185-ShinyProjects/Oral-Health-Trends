@@ -32,7 +32,7 @@ function(input, output) {
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
   output$education <- renderPlot({
-    education %>%
+    education2 %>%
       filter(LocationDesc == input$LocationDesc6) %>%
       ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
