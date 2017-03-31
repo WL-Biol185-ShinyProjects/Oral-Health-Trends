@@ -16,7 +16,7 @@ labels <- sprintf(
   joinedTable$NAME, joinedTable$Data_Value
 ) %>% lapply(htmltools::HTML)
 
-leaflet(states)  %>% setView(lng = -100, lat = 40, zoom = 4) %>%
+map <- leaflet(states)  %>% setView(lng = -100, lat = 40, zoom = 4) %>%
   addTiles() %>%
   addPolygons(
   fillColor = ~pal2(Data_Value), 

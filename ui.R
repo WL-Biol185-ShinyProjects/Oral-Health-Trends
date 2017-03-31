@@ -19,8 +19,10 @@ dashboardPage(
       tabItem(tabName = "Home",
               fluidPage(
                 titlePanel("Welcome to our page!"),
-                mainPanel("Our page analyzes trends in oral health care across the nation. We look at different age groups, race, income levels, gender, and differences in education."))),
-      
+                mainPanel(
+                  p("Our page analyzes trends in oral health care across the nation. We look at different age groups, race, income levels, gender, and differences in education."),
+                  p("Here we have a graph of the United States, showing the percentage of adults over the age of 18 who have gone to the dentist in the past year."))),
+              leafletOutput("map"), p(), actionButton("recalc", "")),
       tabItem(tabName = "age18",
               titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
               mainPanel(

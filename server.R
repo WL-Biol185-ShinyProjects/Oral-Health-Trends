@@ -31,10 +31,31 @@ function(input, output) {
         filter(LocationDesc == input$LocationDesc4) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
-  output$education <- renderPlot({
+  output$educationplot <- renderPlot({
     education2 %>%
       filter(LocationDesc == input$LocationDesc6) %>%
       ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
-  
-  
+ 
+    output$map <- renderLeaflet({
+        leaflet(states)  %>% setView(lng = -100, lat = 40, zoom = 4) %>%
+        addTiles() %>%
+        addPolygons(
+          fillColor = ~pal2(Data_Value), 
+          weight = 2,
+          color = "white",
+          highlight= highlightOptions(
+            weight = 5,
+            color = "#666",
+            dashArray = "",
+            fillOpacity = 0.7,
+            bringToFront = TRUE),
+          label = labels,
+          labelOptions = labelOptions(
+            style= list("font-weight" = "normal", padding = "3px 8px"),
+            textsize = "15px",
+            direction = "auto"
+          )) %>%
+        addLegend(pal = pal, values= ~Data_Value, opacity = 0.7, title= NULL, position= "bottomright"
+        )
+    })
   }
