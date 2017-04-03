@@ -6,16 +6,18 @@ library(ggplot2)
 
 dashboardPage(
   
-  dashboardHeader(title = "Oral Health Trends"),
+  dashboardHeader(title = "Oral Health Trends of 2014"),
   
   dashboardSidebar( 
     sidebarMenu(
       menuItem("Home", tabName = "Home", icon = icon("Home")),
       menuItem("Age 18+", tabName = "age18", icon = icon("Age 18+")),
+      menuItem("2012 v 2014", tabName = "2012v2014", icon = icon("2012 v 2014")),
       menuItem("Data Source", tabName = "datasource", icon = icon("Data Source")))),
   
   dashboardBody(
     tabItems(
+      
       tabItem(tabName = "Home",
               fluidPage(
                 titlePanel("Welcome to our page!"),
@@ -23,6 +25,7 @@ dashboardPage(
                   p("Our page analyzes trends in oral health care across the nation. We look at different age groups, race, income levels, gender, and differences in education."),
                   p("Here we have a graph of the United States, showing the percentage of adults over the age of 18 who have gone to the dentist in the past year."))),
               leafletOutput("map"), p(), actionButton("recalc", "")),
+      
       tabItem(tabName = "age18",
               titlePanel("Adults aged 18+ who have visited a dentist in the past year"),
               mainPanel(
@@ -54,10 +57,19 @@ dashboardPage(
                         selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
                         plotOutput("incomeplot")))),
                   tabPanel("Education",
-                      box("Comparing education levels within a state:",
-                          inputPanel(
-                            selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
-                            plotOutput("educationplot"))))))),
+                    box("Comparing education levels within a state:",
+                      inputPanel(
+                        selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
+                        plotOutput("educationplot"))))))),
       
+      tabItem(tabName = "2012v2014",
+              fluidPage(
+                titlePanel("2012 v 2014"),
+                mainPanel(
+                    box("Looking at the difference between 2012 and 2014 values by state:",
+                      inputPanel(
+                        selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
+                        plotOutput("countryplot1")))))),
+              
       tabItem(tabName = "datasource",
               titlePanel("Data Source")))))
