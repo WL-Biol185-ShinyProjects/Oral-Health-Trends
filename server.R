@@ -10,12 +10,7 @@ function(input, output) {
   
   output$statewidegender <- renderPlot({
       genderB %>%
-        ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point() + guides(color = guide_legend(title = "State:"))})
-  
-  output$hover_info <- renderUI({
-    hover <- input$plot_hover
-    point <- nearPoints(genderB, hover, threshold = 5, maxpoints = 1, addDist = TRUE)
-    if (nrow(point) == 0) return(NULL)})
+        ggplot(aes(Female, Male, label = LocationAbbr)) + geom_point() + geom_text(aes(label = LocationAbbr, color = ""), hjust=0, vjust=0) + guides(color=guide_legend(title = "State:"))})
   
   output$age5plot <- renderPlot({
     age5 %>%

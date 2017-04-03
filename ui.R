@@ -6,7 +6,7 @@ library(ggplot2)
 
 dashboardPage(
   
-  dashboardHeader(title = "Oral Health Trends of 2014"),
+  dashboardHeader(title = "Oral Health Trends"),
   
   dashboardSidebar( 
     sidebarMenu(
@@ -22,7 +22,7 @@ dashboardPage(
               fluidPage(
                 titlePanel("Welcome to our page!"),
                 mainPanel(
-                  p("Our page analyzes trends in oral health care across the nation. We look at different age groups, race, income levels, gender, and differences in education."),
+                  p("Our page analyzes trends in oral health care across the nation from 2014. We look at different age groups, race, income levels, gender, and differences in education."),
                   p("Here we have a graph of the United States, showing the percentage of adults over the age of 18 who have gone to the dentist in the past year."))),
               leafletOutput("map"), p(), actionButton("recalc", "")),
       
@@ -36,8 +36,7 @@ dashboardPage(
                         selectInput("LocationDesc1", label = "State", choices = unique(gender$LocationDesc)),
                         plotOutput("genderplot"))),
                     box("Countrywide comparison of gender data:",
-                        plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
-                        uiOutput("hover_info"))),
+                        plotOutput("statewidegender"))),
                   tabPanel("Age",
                     box("Comparing age within a state:",
                         inputPanel(

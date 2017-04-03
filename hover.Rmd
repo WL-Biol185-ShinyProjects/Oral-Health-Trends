@@ -1,0 +1,179 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r}
+
+library(ggplot2)
+
+ui <- fluidPage(
+    fluidRow(
+        column(width = 12,
+               plotOutput("statewidegender", height = 350, hover = hoverOpts(id ="plot_hover"))
+        )
+    ),
+    fluidRow(
+        column(width = 5,
+               verbatimTextOutput("hover_info")
+        )
+    )
+)
+
+server <- function(input, output) {
+
+
+    output$statewidegender <- renderPlot({
+        genderB %>%
+        ggplot(aes(Female, Male, color = LocationAbbr) + geom_point()  + guides(color = guide_legend(title = "State:")))})
+
+    output$hover_info <- renderPrint({
+        if(!is.null(input$plot_hover)){
+            hover=input$plot_hover
+            dist=sqrt((hover$x-genderB$Female)^2+(hover$y-genderB$Male)^2)
+            cat("State:")
+            if(min(dist) < 3)
+                genderB$LocationAbbr[which.min(dist)]
+        }
+
+
+    })
+}
+shinyApp(ui, server)
+```
+
+```{r}
+  
+  output$hover_info <- renderPrint({
+      genderB %>% 
+        ggvis(x = Female, y = Male, size.hover := 200) %>%
+      layer_points()})
+
+```
+
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+
+  tags$head(tags$style({
+      position: absolute;
+      width: 300;
+      z-index: 100;
+     })),
+  
+  tags$script(
+    (document).ready(function(){
+    ("genderB").mousemove(function(e){ 
+        
+        $("my_tooltip").show();         
+        $("my_tooltip").css({             
+          top: (e.pageY + 5) + "px",             
+          left: (e.pageX + 5) + "px"         
+        });     
+      });     
+    });
+  ),
+
+  selectInput("var_y", "Y-Axis", choices = names(mtcars), selected = "disp"),
+  plotOutput("plot1", hover = hoverOpts(id = "plot_hover", delay = 0)),
+  uiOutput("my_tooltip")
+)
+
+server <- function(input, output) {
+
+  data <- reactive({
+    mtcars
+  })
+
+  output$plot1 <- renderPlot({
+    req(input$var_y)
+    ggplot(data(), aes_string("mpg", input$var_y)) + 
+      geom_point(aes(color = factor(cyl)))
+  })
+
+  output$my_tooltip <- renderUI({
+    hover <- input$plot_hover 
+    y <- nearPoints(data(), input$plot_hover)[ ,c("mpg", input$var_y)]
+    req(nrow(y) != 0)
+    verbatimTextOutput("vals")
+  })
+
+  output$vals <- renderPrint({
+    hover <- input$plot_hover 
+    y <- nearPoints(data(), input$plot_hover)[ , c("mpg", input$var_y)]
+    # y <- nearPoints(data(), input$plot_hover)["wt"]
+    req(nrow(y) != 0)
+    # y is a data frame and you can freely edit content of the tooltip 
+    # with "paste" function 
+    y
+  })
+}
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+
+  tags$head(tags$style('
+     #my_tooltip {
+      position: absolute;
+      width: 300px;
+      z-index: 100;
+     }
+  ')),
+  tags$script('
+    $(document).ready(function(){
+      // id of the plot
+      $("#statewidegender").mousemove(function(e){ 
+
+        // ID of uiOutput
+        $("#my_tooltip").show();         
+        $("#my_tooltip").css({             
+          top: (e.pageY + 5) + "px",             
+          left: (e.pageX + 5) + "px"         
+        });     
+      });     
+    });
+  '),
+
+  plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
+  uiOutput("my_tooltip")
+)
+
+server <- function(input, output) {
+
+  data <- reactive({
+    genderB
+  })
+
+  output$statewidegender <- renderPlot({
+    ggplot(data(), aes_string("Female", "Male")) + 
+      geom_point(aes(color = LocationAbbr))
+  })
+
+  output$my_tooltip <- renderUI({
+    hover <- input$plot_hover 
+    y <- nearPoints(data(), input$plot_hover)
+    verbatimTextOutput("State:")
+  })
+
+  output$vals <- renderPrint({
+    hover <- input$plot_hover 
+    y <- nearPoints(data(), input$plot_hover)
+  })
+}
+shinyApp(ui, server)
+```
+```{r}
+box("Countrywide comparison of gender data:",
+                        plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
+                        uiOutput("hover_info"))),
+
+
+```
+
+
