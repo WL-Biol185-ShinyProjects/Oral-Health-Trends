@@ -12,6 +12,11 @@ function(input, output) {
       genderB %>%
         ggplot(aes(Female, Male, color = LocationAbbr)) + geom_point() + guides(color = guide_legend(title = "State:"))})
   
+  output$hover_info <- renderUI({
+    hover <- input$plot_hover
+    point <- nearPoints(genderB, hover, threshold = 5, maxpoints = 1, addDist = TRUE)
+    if (nrow(point) == 0) return(NULL)})
+  
   output$age5plot <- renderPlot({
     age5 %>%
         filter(LocationDesc == input$LocationDesc2) %>%

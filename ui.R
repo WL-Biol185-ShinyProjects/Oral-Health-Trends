@@ -36,7 +36,8 @@ dashboardPage(
                         selectInput("LocationDesc1", label = "State", choices = unique(gender$LocationDesc)),
                         plotOutput("genderplot"))),
                     box("Countrywide comparison of gender data:",
-                        plotOutput("statewidegender"))),
+                        plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
+                        uiOutput("hover_info"))),
                   tabPanel("Age",
                     box("Comparing age within a state:",
                         inputPanel(
