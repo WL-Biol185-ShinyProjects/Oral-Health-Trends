@@ -24,3 +24,10 @@ output$raceplot <- renderPlot({
     filter(LocationDesc == input$LocationDesc) %>%
     ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity")})
 
+```{r}
+race2 <- filter(newtable, Break_Out_Category == "Race", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year", Response == "Yes", Year == "2014")
+```
+```{r}
+race2 <- race2[-196,]
+```
+

@@ -9,7 +9,7 @@ library(ggplot2)
 ui <- fluidPage(
     fluidRow(
         column(width = 12,
-               plotOutput("statewidegender", height = 350, hover = hoverOpts(id ="plot_hover"))
+               plotOutput("statewiderace", height = 350, hover = hoverOpts(id ="plot_hover"))
         )
     ),
     fluidRow(
@@ -22,8 +22,8 @@ ui <- fluidPage(
 server <- function(input, output) {
 
 
-    output$statewidegender <- renderPlot({
-        genderB %>%
+    output$statewiderace <- renderPlot({
+        race %>%
         ggplot(aes(Female, Male, color = LocationAbbr) + geom_point()  + guides(color = guide_legend(title = "State:")))})
 
     output$hover_info <- renderPrint({
@@ -112,62 +112,30 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
+#trying to make race graph
 ```{r}
 library(shiny)
 library(ggplot2)
 
 ui <- fluidPage(
-
-  tags$head(tags$style('
-     #my_tooltip {
-      position: absolute;
-      width: 300px;
-      z-index: 100;
-     }
-  ')),
-  tags$script('
-    $(document).ready(function(){
-      // id of the plot
-      $("#statewidegender").mousemove(function(e){ 
-
-        // ID of uiOutput
-        $("#my_tooltip").show();         
-        $("#my_tooltip").css({             
-          top: (e.pageY + 5) + "px",             
-          left: (e.pageX + 5) + "px"         
-        });     
-      });     
-    });
-  '),
-
-  plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
-  uiOutput("my_tooltip")
+  selectInput("race", label = "Race", choices = unique(race2$Break_Out), selected = "disp"),
+  plotOutput("statewiderace")
 )
 
 server <- function(input, output) {
 
   data <- reactive({
-    genderB
+    race2
   })
 
-  output$statewidegender <- renderPlot({
-    ggplot(data(), aes_string("Female", "Male")) + 
-      geom_point(aes(color = LocationAbbr))
-  })
-
-  output$my_tooltip <- renderUI({
-    hover <- input$plot_hover 
-    y <- nearPoints(data(), input$plot_hover)
-    verbatimTextOutput("State:")
-  })
-
-  output$vals <- renderPrint({
-    hover <- input$plot_hover 
-    y <- nearPoints(data(), input$plot_hover)
+  output$statewiderace <- renderPlot({
+    req(input$race)
+    ggplot(race2, aes(LocationAbbr, input$race)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
   })
 }
-shinyApp(ui, server)
+shinyApp(ui = ui, server = server)
 ```
+
 ```{r}
 box("Countrywide comparison of gender data:",
                         plotOutput("statewidegender", hover = hoverOpts(id = "plot_hover", delay = 0)),
@@ -175,5 +143,31 @@ box("Countrywide comparison of gender data:",
 
 
 ```
+
+#another attempt at race graph
+
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+  selectInput("race", label = "Race", choices = c("Black","White", "Hispanic", "MultiRacial", "Other"), selected = "disp"),
+  plotOutput("statewiderace")
+)
+
+server <- function(input, output) {
+
+  data <- reactive({
+    raceB
+  })
+
+  output$statewiderace <- renderPlot({
+    req(input$race)
+    ggplot(raceB, aes(LocationAbbr, Black)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  })
+}
+shinyApp(ui = ui, server = server)
+```
+
 
 
