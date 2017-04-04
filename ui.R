@@ -80,11 +80,16 @@ dashboardPage(
       tabItem(tabName = "2012v2014",
               fluidPage(
                 titlePanel("2012 v 2014"),
-                mainPanel(
-                      box(title = "Looking at the difference between 2012 and 2014 values by state:",
-                        inputPanel(
-                          selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
-                          plotOutput("countryplot1")))))),
-              
+                mainPanel( 
+                  tabsetPanel(
+                    tabPanel("States Comparison 2012v2014",
+                             box("Countrywide comparison of 2012v2014 data:",
+                                 plotOutput("country"))),
+                    tabPanel("Look at State difference individually",
+                             box("Looking at the difference between 2012 and 2014 values by state:",
+                                 inputPanel(
+                                   selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
+                                   plotOutput("countryplot1")))))))),
+      
       tabItem(tabName = "datasource",
               titlePanel("Data Source")))))
