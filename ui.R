@@ -22,11 +22,24 @@ dashboardPage(
       tabItem(tabName = "intro",
               fluidPage(
                titlePanel("A healthy smile means a healthy you!"),
-                 h4("The importance of oral health"),
-                 p("Your oral health can reveal a lot about the condition of your body as a whole. 
-                   For example, when your mouth is healthy, chances are your overall health is good, too. 
-                   However, if you have poor oral health, it may indicate that you have other health problems as well. 
-                   Additionally, good oral health can actually prevent certain diseases from occurring."))),
+               mainPanel(h4("Your oral health can reveal a lot about the condition of your body as a whole.  
+                   For example, when your mouth is healthy, chances are your overall health is good too, but if you have poor oral health, it may indicate that you also have other health problems.  
+                   In fact, good oral hygiene can actually prevent diseases from occurring."),
+                tabsetPanel(
+                  
+                  tabPanel("Health Complications",
+                    fluidRow(
+                      box("Research shows that more than 90% of all systemic diseases have oral manifestations.",
+                          p(actionButton("ohno", label = "Oh no!"),
+                            hr(),
+                            fluidRow(column(2, verbatimTextOutput("value"))))))),
+                  
+                  tabPanel("Solutions",
+                    fluidRow(
+                      box("Seeing a dentist regularly helps maintain oral health while also allowing for your dentist to watch for developments that may point to other health issues.",
+                          p(actionButton("help", label = "Help!"),
+                          hr(),
+                          fluidRow(column(2, verbatimTextOutput("values"))))))))))),
       
       tabItem(tabName = "overview",
               fluidPage(

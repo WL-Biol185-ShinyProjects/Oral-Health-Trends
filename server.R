@@ -2,7 +2,11 @@ library(shiny)
 library(ggplot2)
 library(leaflet)
 
-function(input, output) {
+function(input, output, session) {
+  
+  output$ohno <- renderText({ input$ohno})
+  
+  output$help <- renderText({ input$help })
   
   output$genderplot <- renderPlot({
       gender %>%
