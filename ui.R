@@ -30,7 +30,8 @@ dashboardPage(
                   tabPanel("Health Complications",
                     fluidRow(
                       box("Research shows that more than 90% of all systemic diseases have oral manifestations.",
-                          p(actionButton("ohno", label = "Oh no!"),
+                          p(actionButton("ohno", label = "Oh no!", "Possible diseases:
+                                         "),
                             hr(),
                             fluidRow(column(2, verbatimTextOutput("value"))))))),
                   
@@ -55,37 +56,37 @@ dashboardPage(
                   
                   tabPanel("Gender",
                     fluidRow(
-                      box(title = "Comparing gender within a state:",
+                      box(title = "Comparing gender within a state:", status="success", solidHeader = TRUE, 
                         inputPanel(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
-                      box(title = "Countrywide comparison of gender data:",
+                      box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE, 
                           plotOutput("statewidegender", width = 400, height = 400)))),
                   
                   tabPanel("Age",
-                      box(title = "Comparing age within a state:",
+                      box(title = "Comparing age within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc2", label = "State", choices = unique(age5$LocationDesc)),
                           plotOutput("age5plot"))),
-                      box(title = "Countrywide comparison of age data:",
+                      box(title = "Countrywide comparison of age data:", status="warning", solidHeader = TRUE,
                           plotOutput("statewideage"))),
                   
                   tabPanel("Race",
-                      box(title = "Comparing race within a state:",
+                      box(title = "Comparing race within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc3", label = "State", choices = unique(race$LocationDesc)),
                           plotOutput("raceplot"))),
-                      box(title = "Countrywide comparison of race data:",
+                      box(title = "Countrywide comparison of race data:", status="warning", solidHeader = TRUE,
                           plotOutput("statewideblack"))),
                   
                   tabPanel("Income",
-                      box(title = "Comparing income within a state:",
+                      box(title = "Comparing income within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
                           plotOutput("incomeplot")))),
                   
                   tabPanel("Education",
-                      box(title = "Comparing education levels within a state:",
+                      box(title = "Comparing education levels within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
                           plotOutput("educationplot"))))))),
@@ -99,7 +100,7 @@ dashboardPage(
                              box("Countrywide comparison of 2012v2014 data:",
                                  plotOutput("country"))),
                     tabPanel("Look at State difference individually",
-                             box("Looking at the difference between 2012 and 201<a>4 values by state:",
+                             box("Looking at the difference between 2012 and 2014 values by state:",
                                  inputPanel(
                                    selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
                                    plotOutput("countryplot1")))))))),
