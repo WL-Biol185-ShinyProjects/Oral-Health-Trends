@@ -13,8 +13,7 @@ gender <- filter(newtable, Break_Out_Category == "Gender", Indicator == "Adults 
 ```
 
 ```{r}
-gender <- gender[-23,]
-gender <- gender[-79,]
+gender <- gender[-89,]
 ```
 
 ```{r}

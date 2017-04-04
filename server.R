@@ -1,5 +1,6 @@
 library(shiny)
 library(ggplot2)
+library(leaflet)
 
 function(input, output) {
   
@@ -10,7 +11,8 @@ function(input, output) {
   
   output$statewidegender <- renderPlot({
       genderB %>%
-        ggplot(aes(Female, Male, label = LocationAbbr)) + geom_point() + geom_text(aes(label = LocationAbbr, color = ""), hjust=0, vjust=0) + guides(color=guide_legend(title = "State:"))})
+      filter(LocationAbbr != "US") %>%
+        ggplot(aes(Female, Male, label = LocationAbbr)) + geom_point(alpha = 0) + geom_text(aes(label = LocationAbbr), hjust=0.5, vjust=0.5, size = 3)})
   
   output$age5plot <- renderPlot({
     age5 %>%

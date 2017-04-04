@@ -169,5 +169,32 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+  selectInput("race", label = h3("Race:"), 
+    choices = list("Black" = raceB$Black, "White" = raceB$White, "Hispanic" = raceB$Hispanic, "MultiRacial" = raceB$MultiRacial, "Other" = raceB$Other),
+    selected = NULL,
+    multiple = FALSE,
+    selectize = FALSE),
+  
+  hr(),
+  fluidRow(column(3, verbatimTextOutput("value")))
+  
+)
+
+server <- function(input, output) {
+  
+  output$statewiderace <- renderPlot({
+    req(input$race)
+    ggplot(raceB, aes(LocationAbbr, Black)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
 
 
