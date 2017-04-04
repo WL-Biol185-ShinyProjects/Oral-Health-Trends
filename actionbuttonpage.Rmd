@@ -1,0 +1,32 @@
+---
+title: "actionbuttons"
+output: html_document
+---
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  actionButton("ohno", label = "Oh no!"),
+    textOutput("Diabetes"),
+    textOutput("Leukemia"),
+    textOutput("Oral cancer"),
+    textOutput("Pancreatic cancer"),
+    textOutput("Heart disease"),
+    textOutput("Kidney disease"))
+
+server <- function(input, output){
+  
+   #  Use a list of reactive values
+  x <- actionbuttons$ResponseA
+  rv <- reactiveValues(x=0)
+
+  # Will update text output when rv$x is updated
+  observe({
+    output$Diabgetes <- renderText({ rv$x })
+  })}
+
+
+shinyApp(ui, server)
+```
+
