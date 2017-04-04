@@ -1,0 +1,33 @@
+---
+title: "countryplotlegendfixed"
+output: html_document
+---
+
+this is what it should look like with my stuff in it in UI
+
+ tabItem(tabName = "2012v2014",
+              fluidPage(
+                titlePanel("2012 v 2014"),
+                mainPanel( 
+                  tabsetPanel(
+                    tabPanel("States Comparison 2012v2014",
+                             box("Countrywide comparison of 2012v2014 data:",
+                                 plotOutput("country"))),
+                    tabPanel("Look at State difference individually",
+                    box("Looking at the difference between 2012 and 2014 values by state:",
+                      inputPanel(
+                        selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
+                        plotOutput("countryplot1")))))))),
+                            
+      tabItem(tabName = "datasource",
+              titlePanel("Data Source")))))
+              
+        
+        
+        
+        this is what it should look like with stuff in it for server
+        
+        output$country<- renderPlot({
+    countryplot%>%
+      ggplot(aes(X2012,X2014, color=LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point() + theme(legend.position = "bottom") + theme(legend.text = element_text(size=6.25))
+  })
