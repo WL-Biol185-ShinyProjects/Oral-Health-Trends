@@ -110,7 +110,6 @@ dashboardPage(
               mainPanel(
                 tabsetPanel(
                     tabPanel("Data References",
-                             box(a(href="https://nccd.cdc.gov/oralhealthdata/rdPage.aspx?rdReport=DOH_DATA.ExploreByLocation&rdProcessAction=&SaveFileGenerated=1&rdCSRFKey=76513270-7c98-49a7-b68e-164a4d537099&islLocation=48&iclTopic_rdExpandedCollapsedHistory=&iclTopic=ADT&islYear=2014&hidLocation=48&hidTopic=ADT&hidYear=2014&irbShowFootnotes=Show&iclIndicators_rdExpandedCollapsedHistory=&iclIndicators=ADT1_1%2cADT1_3%2cADT1_4&hidPreviouslySelectedIndicators=&DashboardColumnCount=2&rdShowElementHistory=&rdScrollX=0&rdScrollY=0&rdRnd=65690", "CDC Website")),
                              box(a(href="https://www.deltadentalins.com/oral_health/dentists-detect.html", "Oral Health Information")),
                              box(downloadButton("downloadTable"))
                              
