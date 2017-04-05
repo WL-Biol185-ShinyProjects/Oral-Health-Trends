@@ -35,6 +35,11 @@ function(input, output, session) {
     age5 %>%
         filter(LocationDesc == input$LocationDesc2) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Age Group") + ylab("Percent") + geom_bar(stat="identity")})
+  
+  output$countrywideage <- renderPlot({
+    age5 %>%
+      filter(Break_Out == input$age) %>%
+      ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
 
   output$raceplot <- renderPlot({
      race %>%

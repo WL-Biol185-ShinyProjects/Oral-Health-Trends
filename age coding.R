@@ -15,3 +15,17 @@ output$age5plot <- renderPlot({
     filter(LocationDesc == input$LocationDesc) %>%
     ggplot(aes(Break_Out, Data_Value)) + xlab("Age") + ylab("Percent") + geom_bar(stat = "identity")})
 
+ui <- fluidPage(
+  selectInput("age", label = "Age", choices = unique(age$Break_Out), selected = "disp"),
+  plotOutput("statewideage")
+)
+
+
+  
+  output$statewideage <- renderPlot({
+    age5 %>%
+      filter(Break_Out == input$age) %>%
+      ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  })
+}
+shinyApp(ui = ui, server = server)
