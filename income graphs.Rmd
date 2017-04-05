@@ -16,3 +16,27 @@ income <- filter(newtable, Break_Out_Category == "Income", Indicator == "Adults 
 ggplot(income, aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity")
 ```
 
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+  selectInput("income", label = "Income", choices = unique(income$Break_Out), selected = "disp"),
+  plotOutput("statewideincome")
+)
+
+server <- function(input, output) {
+
+  data <- reactive({
+    income
+  })
+
+  output$statewideincome <- renderPlot({
+    income %>%
+      filter(Break_Out == input$income) %>%
+    ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  })
+}
+shinyApp(ui = ui, server = server)
+```
+

@@ -52,3 +52,26 @@ thingsToSay[input$ohno]
 shinyApp(ui, server)
 ```
 
+```{r}
+library(shiny)
+library(dplyr)
+
+ui <- fluidPage(
+  actionButton("help", label = "Help!"),
+   verbatimTextOutput("solutions"))
+
+
+server <- function(input, output){
+  
+  thingsToSayHere <- c("Brush twice a day for two minutes with fluoridated toothpaste", "Floss daily to remove plaque that your toothbrush can't reach", "Maintain a healthy diet to obtain the nutrients that prevent gum disease", "Avoid cigarettes and smokeless tobacco", "Visit the dentist regularly for cleanings and exams", "Keep your dentist informed of your medical history and any health developments even if they seem unrelated to your oral health")
+  
+  output$solutions <- renderText({
+    if (input$help > 0 && input$help < 7) {
+thingsToSayHere[input$help]    
+     } else {""}
+  })
+}
+
+shinyApp(ui, server)
+```
+
