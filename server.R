@@ -74,5 +74,11 @@ function(input, output, session) {
         addLegend(pal = pal, values= ~Data_Value, opacity = 0.7, title= NULL, position= "bottomright"
         )
     })
+    
+    output$downloadTable <- downloadHandler( filename = "oralhealthdata.txt",
+                                             content = function(file) {
+                                               write.table(dental_data_RAW, file=file)
+                                             })
+                                             
 }
 
