@@ -30,8 +30,7 @@ dashboardPage(
                   tabPanel("Health Complications",
                     fluidRow(
                       box("Research shows that more than 90% of all systemic diseases have oral manifestations.",
-                          p(actionButton("ohno", label = "Oh no!", "Possible diseases:
-                                         "),
+                          p(actionButton("ohno", label = "Oh no!"),
                             hr(),
                             fluidRow(column(2, verbatimTextOutput("value"))))))),
                   
@@ -61,7 +60,7 @@ dashboardPage(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
                       box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE, 
-                          plotOutput("statewidegender", width = 400, height = 400)))),
+                          plotOutput("statewidegender")))),
                   
                   tabPanel("Age",
                       box(title = "Comparing age within a state:", status="success", solidHeader = TRUE,
@@ -84,12 +83,13 @@ dashboardPage(
                         inputPanel(
                           selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
                           plotOutput("incomeplot")))),
-                  
+                
                   tabPanel("Education",
                       box(title = "Comparing education levels within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
                           plotOutput("educationplot"))))))),
+              
       
       tabItem(tabName = "2012v2014",
               fluidPage(
@@ -97,16 +97,20 @@ dashboardPage(
                 mainPanel( 
                   tabsetPanel(
                     tabPanel("States Comparison 2012v2014",
-                             box("Countrywide comparison of 2012v2014 data:",
+                             box(title= "Countrywide comparison:", status="success", solidHeader = TRUE,
                                  plotOutput("country"))),
                     tabPanel("Look at State difference individually",
-                             box("Looking at the difference between 2012 and 2014 values by state:",
+                             box(title= "Statewide comparison:", status="warning", solidHeader = TRUE,
                                  inputPanel(
                                    selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
                                    plotOutput("countryplot1")))))))),
       
       tabItem(tabName = "datasource",
-              titlePanel("Data Source")))))
+              titlePanel("Data Source"),
+              mainPanel(
+                tabsetPanel(
+                    tabPanel("Data References",
+                             box(a(href="https://nccd.cdc.gov/oralhealthdata/rdPage.aspx?rdReport=DOH_DATA.ExploreByLocation&rdProcessAction=&SaveFileGenerated=1&rdCSRFKey=76513270-7c98-49a7-b68e-164a4d537099&islLocation=48&iclTopic_rdExpandedCollapsedHistory=&iclTopic=ADT&islYear=2014&hidLocation=48&hidTopic=ADT&hidYear=2014&irbShowFootnotes=Show&iclIndicators_rdExpandedCollapsedHistory=&iclIndicators=ADT1_1%2cADT1_3%2cADT1_4&hidPreviouslySelectedIndicators=&DashboardColumnCount=2&rdShowElementHistory=&rdScrollX=0&rdScrollY=0&rdRnd=65690", "CDC Website")),
+                             box(a(href="https://www.deltadentalins.com/oral_health/dentists-detect.html", "Oral Health Information"))
+              )))))))
 
-
-#a(href = ";link, "Text to link")
