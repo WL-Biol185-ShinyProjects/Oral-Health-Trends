@@ -59,7 +59,7 @@ dashboardPage(
                         inputPanel(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
-                      box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE, 
+                      box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE,  
                           plotOutput("statewidegender")))),
                   
                   tabPanel("Age",

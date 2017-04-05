@@ -4,6 +4,7 @@ library(leaflet)
 
 function(input, output, session) {
   
+  
   output$ohno <- renderText({ input$ohno})
   
   output$help <- renderText({ input$help })
@@ -73,4 +74,5 @@ function(input, output, session) {
         addLegend(pal = pal, values= ~Data_Value, opacity = 0.7, title= NULL, position= "bottomright"
         )
     })
-  }
+}
+
