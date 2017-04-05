@@ -5,9 +5,21 @@ library(leaflet)
 function(input, output, session) {
   
   
-  output$ohno <- renderText({ input$ohno})
+  thingsToSay <- c("Diabetes", "Leukemia", "Oral cancer", "Pancreatic cancer", "Heart disease", "Kidney disease")
   
-  output$help <- renderText({ input$help })
+  output$problems <- renderText({
+    if (input$ohno > 0 && input$ohno < 7) {
+      thingsToSay[input$ohno]    
+    } else {""}
+  })
+  
+  thingsToSayHere <- c("Brush twice a day for two minutes with fluoridated toothpaste", "Floss daily to remove plaque that your toothbrush can't reach", "Maintain a healthy diet to obtain the nutrients that prevent gum disease", "Avoid cigarettes and smokeless tobacco", "Visit the dentist regularly for cleanings and exams", "Keep your dentist informed of your medical history and any health developments even if they seem unrelated to your oral health")
+  
+  output$solutions <- renderText({
+    if (input$help > 0 && input$help < 7) {
+      thingsToSayHere[input$help]    
+    } else {""}
+  })
   
   output$genderplot <- renderPlot({
       gender %>%

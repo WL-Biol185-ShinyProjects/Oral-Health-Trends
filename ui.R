@@ -30,16 +30,16 @@ dashboardPage(
                   tabPanel("Health Complications",
                     fluidRow(
                       box("Research shows that more than 90% of all systemic diseases have oral manifestations.",
-                          p(actionButton("ohno", label = "Oh no!"),
-                            hr(),
-                            fluidRow(column(2, verbatimTextOutput("value"))))))),
+                          p(fluidPage(
+                            actionButton("ohno", label = "Oh no!"),
+                            verbatimTextOutput("problems")))))),
                   
                   tabPanel("Solutions",
                     fluidRow(
                       box("Seeing a dentist regularly helps maintain oral health while also allowing for your dentist to watch for developments that may point to other health issues.",
-                          p(actionButton("help", label = "Help!"),
-                          hr(),
-                          fluidRow(column(2, verbatimTextOutput("values"))))))))))),
+                          p(fluidPage(
+                            actionButton("help", label = "Help!"),
+                            verbatimTextOutput("solutions")))))))))),
       
       tabItem(tabName = "overview",
               fluidPage(
