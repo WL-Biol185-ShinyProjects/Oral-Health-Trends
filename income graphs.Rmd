@@ -39,4 +39,23 @@ server <- function(input, output) {
 }
 shinyApp(ui = ui, server = server)
 ```
+```{r}
+library(shiny)
+library(ggplot2)
+
+ui <- fluidPage(
+  selectInput("education", label = "Education", choices = unique(education2$Break_Out), selected = "disp"),
+  plotOutput("countrywideeducation")
+)
+
+server <- function(input, output) {
+
+  output$countrywideeducation <- renderPlot({
+    education2 %>%
+      filter(Break_Out == input$education) %>%
+    ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+  })
+}
+shinyApp(ui = ui, server = server)
+```
 

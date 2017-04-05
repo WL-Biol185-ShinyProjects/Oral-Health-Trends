@@ -60,7 +60,7 @@ dashboardPage(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
                       box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE,  
-                          plotOutput("statewidegender")))),
+                          plotOutput("countrywidegender")))),
                   
                   tabPanel("Age",
                       box(title = "Comparing age within a state:", status="success", solidHeader = TRUE,
@@ -76,19 +76,26 @@ dashboardPage(
                           selectInput("LocationDesc3", label = "State", choices = unique(race$LocationDesc)),
                           plotOutput("raceplot"))),
                       box(title = "Countrywide comparison of race data:", status="warning", solidHeader = TRUE,
-                          plotOutput("statewideblack"))),
+                          selectInput("race", label = "Race", choices = unique(race2$Break_Out), selected = "disp"),
+                          plotOutput("countrywiderace"))),
                   
                   tabPanel("Income",
                       box(title = "Comparing income within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc4", label = "State", choices = unique(income$LocationDesc)),
-                          plotOutput("incomeplot")))),
+                          plotOutput("incomeplot"))),
+                      box(title = "Countrywide comparison of income data:", status = "warning", solidHeader = TRUE,
+                          selectInput("income", label = "Income", choices = unique(income$Break_Out), selected = "disp"),
+                          plotOutput("countrywideincome"))),
                 
                   tabPanel("Education",
                       box(title = "Comparing education levels within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State", choice = unique(education2$LocationDesc)),
-                          plotOutput("educationplot"))))))),
+                          plotOutput("educationplot"))),
+                      box(title = "Countrywide comparison of education data:", status = "warning", solidHeader = TRUE,
+                          selectInput("education", label = "Education", choices = unique(education2$Break_Out), selected = "disp"),
+                          plotOutput("countrywideeducation")))))),
               
       
       tabItem(tabName = "2012v2014",
@@ -111,7 +118,5 @@ dashboardPage(
                 tabsetPanel(
                     tabPanel("Data References",
                              box(a(href="https://www.deltadentalins.com/oral_health/dentists-detect.html", "Oral Health Information")),
-                             box(downloadButton("downloadTable"))
-                             
-              )))))))
+                             box(downloadButton("downloadTable")))))))))
 

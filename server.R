@@ -26,7 +26,7 @@ function(input, output, session) {
         filter(LocationDesc == input$LocationDesc1) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Gender") + ylab("Percent") + geom_bar(stat = "identity")})
   
-  output$statewidegender <- renderPlot({
+  output$countrywidegender <- renderPlot({
       genderB %>%
       filter(LocationAbbr != "US") %>%
         ggplot(aes(Female, Male, label = LocationAbbr)) + geom_point(alpha = 0) + geom_text(aes(label = LocationAbbr), hjust=0.5, vjust=0.5, size = 3)})
@@ -41,19 +41,30 @@ function(input, output, session) {
         filter(LocationDesc == input$LocationDesc3) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Race") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
 
-  output$statewideblack <- renderPlot({
-      raceB %>%
-        ggplot(aes(LocationAbbr, Black)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
+  output$countrywiderace <- renderPlot({
+    race2 %>%
+      filter(Break_Out == input$race) %>%
+      ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
   output$incomeplot <- renderPlot({
       income %>%
         filter(LocationDesc == input$LocationDesc4) %>%
         ggplot(aes(Break_Out, Data_Value)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
   
+  output$countrywideincome <- renderPlot({
+    income %>%
+      filter(Break_Out == input$income) %>%
+      ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
+  
   output$educationplot <- renderPlot({
     education2 %>%
       filter(LocationDesc == input$LocationDesc6) %>%
       ggplot(aes(Break_Out, Data_Value)) + xlab("Education Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
+  
+  output$countrywideeducation <- renderPlot({
+    education2 %>%
+      filter(Break_Out == input$education) %>%
+      ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
  
   output$countryplot1 <- renderPlot({
     countryplot%>% 
