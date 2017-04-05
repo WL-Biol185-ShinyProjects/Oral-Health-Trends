@@ -129,8 +129,9 @@ server <- function(input, output) {
   })
 
   output$statewiderace <- renderPlot({
-    req(input$race)
-    ggplot(race2, aes(LocationAbbr, input$race)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
+    race2 %>%
+      filter(Break_Out == input$race) %>%
+    ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1))
   })
 }
 shinyApp(ui = ui, server = server)
