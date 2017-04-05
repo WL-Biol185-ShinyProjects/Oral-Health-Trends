@@ -29,4 +29,26 @@ server <- function(input, output){
 
 shinyApp(ui, server)
 ```
+```{r}
+library(shiny)
+library(dplyr)
+
+ui <- fluidPage(
+  actionButton("ohno", label = "Oh no!"),
+   verbatimTextOutput("problems"))
+
+
+server <- function(input, output){
+  
+  thingsToSay <- c("Diabetes", "Leukemia", "Oral cancer", "Pancreatic cancer", "Heart disease", "Kidney disease")
+  
+  output$problems <- renderText({
+    if (input$ohno > 0 && input$ohno < 7) {
+thingsToSay[input$ohno]    
+     } else {""}
+  })
+}
+
+shinyApp(ui, server)
+```
 
