@@ -125,7 +125,7 @@ dashboardPage(
                              box(title= "Statewide comparison:", status="warning", solidHeader = TRUE,
                                  inputPanel(
                                    selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
-                                   plotOutput("countryplot1")))))))),
+                                   plotOutput("countryplot1", width = 400, height= 500)))))))),
       
       tabItem(tabName = "datasource",
               titlePanel("Data Source"),
