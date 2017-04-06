@@ -1,8 +1,22 @@
 library(shiny)
 library(ggplot2)
 library(leaflet)
+library(RColorBrewer)
+library(htmltools)
 
-function(input, output) {
+gender <- read.csv("gender.csv")
+genderB <- read.csv("genderB.csv")
+age5 <- read.csv("age5.csv")
+age <- read.csv("age.csv")
+race <- read.csv("race.csv")
+race2 <- read.csv("race2.csv")
+income <- read.csv("income.csv")
+education2 <- read.csv("education2.csv")
+countryplot <- read.csv("countryplot.csv")
+newtable.data_value <- read.csv("newtable.data_value.csv")
+newtable <- read.csv("newtable.csv")
+
+function(input, output, session) {
 
 
   thingsToSay <- c("Diabetes", "Leukemia", "Oral cancer", "Pancreatic cancer", "Heart disease", "Kidney disease")
@@ -81,11 +95,25 @@ function(input, output) {
       ggplot(aes(X2012,X2014, color=LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point() + theme(legend.position = "bottom") + theme(legend.text = element_text(size=9))})
   
   map <- readRDS(file = "heatmap.rds")
+  
+  states <- rgdal::readOGR("statedata.json", "OGRGeoJSON")
+  bins <- c(0, 50, 55, 60, 65, 70, 75, 80, 100)
+  pal <- colorBin("YlGnBu", domain = newtable.data_value$Data_Value, bins = bins)
+  newtable.data_value <- filter(newtable, Break_Out_Category == "None", Response == "Yes", Indicator == "Adults aged 18+ who have visited a dentist or dental clinic in the past year")
+  
+  joinedTable <- left_join(states@data, filter(newtable.data_value, Year == 2014), c("NAME" = "LocationDesc"))
+  states@data <- joinedTable
+  
+  labels <- sprintf(
+    "<strong>%s</strong><br/>%g Percent of People",
+    joinedTable$NAME, joinedTable$Data_Value
+  ) %>% lapply(htmltools::HTML)
+  
     output$map <- renderLeaflet({
         leaflet(states)  %>% setView(lng = -100, lat = 40, zoom = 4) %>%
         addTiles() %>%
         addPolygons(
-          fillColor = ~pal2(Data_Value), 
+          fillColor = ~pal(Data_Value), 
           weight = 2,
           color = "white",
           highlight= highlightOptions(

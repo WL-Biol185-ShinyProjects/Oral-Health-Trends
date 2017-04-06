@@ -1,8 +1,18 @@
 library(shiny)
 library(leaflet)
-install.packages("shinydashboard")
 library(shinydashboard)
 library(ggplot2)
+
+gender <- read.csv("gender.csv")
+genderB <- read.csv("genderB.csv")
+age5 <- read.csv("age5.csv")
+age <- read.csv("age.csv")
+race <- read.csv("race.csv")
+race2 <- read.csv("race2.csv")
+income <- read.csv("income.csv")
+education2 <- read.csv("education2.csv")
+countryplot <- read.csv("countryplot.csv")
+map <- readRDS("heatmap.rds")
 
 dashboardPage(
   
