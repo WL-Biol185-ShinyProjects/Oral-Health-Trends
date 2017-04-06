@@ -2,9 +2,9 @@ library(shiny)
 library(ggplot2)
 library(leaflet)
 
-function(input, output, session) {
-  
-  
+function(input, output) {
+
+
   thingsToSay <- c("Diabetes", "Leukemia", "Oral cancer", "Pancreatic cancer", "Heart disease", "Kidney disease")
   
   output$problems <- renderText({
@@ -80,6 +80,7 @@ function(input, output, session) {
     countryplot%>%
       ggplot(aes(X2012,X2014, color=LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point() + theme(legend.position = "bottom") + theme(legend.text = element_text(size=9))})
   
+  map <- readRDS(file = "map.rds")
     output$map <- renderLeaflet({
         leaflet(states)  %>% setView(lng = -100, lat = 40, zoom = 4) %>%
         addTiles() %>%
