@@ -92,7 +92,7 @@ function(input, output, session) {
   
   output$country<- renderPlot({
     countryplot%>%
-      ggplot(aes(X2012,X2014, color=LocationDesc)) + xlab("2012_values") + ylab("2014_values") + geom_point() + theme(legend.position = "bottom") + theme(legend.text = element_text(size=9))})
+      ggplot(aes(X2012,X2014, color=LocationDesc)) + xlab("2012") + ylab("2014")+ labs(color="States") + geom_point() + theme(legend.position = "bottom") + theme(legend.text = element_text(size=9))})
   
   map <- readRDS(file = "heatmap.rds")
   
