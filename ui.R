@@ -110,7 +110,7 @@ dashboardPage(
                   tabsetPanel(
                     tabPanel("States Comparison 2012v2014",
                              box(title= "Countrywide comparison:", status="success", solidHeader = TRUE,
-                                 plotOutput("country"))),
+                                 plotOutput("country", width=500, height = 600))),
                     tabPanel("Look at State difference individually",
                              box(title= "Statewide comparison:", status="warning", solidHeader = TRUE,
                                  inputPanel(
