@@ -58,4 +58,7 @@ server <- function(input, output) {
 }
 shinyApp(ui = ui, server = server)
 ```
+```{r}
+education2 <- education2[-157,]
+```
 
