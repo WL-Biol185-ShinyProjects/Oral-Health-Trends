@@ -70,7 +70,7 @@ function(input, output, session) {
   output$incomeplot <- renderPlot({
       income %>%
         filter(LocationDesc == input$LocationDesc4) %>%
-        ggplot(aes(Break_Out, Data_Value, fill = Break_Out)) + xlab("Income") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
+        ggplot(aes(Break_Out, Data_Value, fill = Break_Out)) + xlab("Income Level") + ylab("Percent") + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
   
   output$countrywideincome <- renderPlot({
       income %>%

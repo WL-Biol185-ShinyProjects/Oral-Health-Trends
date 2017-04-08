@@ -61,56 +61,56 @@ dashboardPage(
       tabItem(tabName = "overview",
               fluidPage(
                 titlePanel("Overview"),
-                  h4("Below is a map of the United States showing the percentage of adults over the age of 18 who visited a dentist in 2014:")),
+                  h4("Below is a map of the United States showing the percent of adults over the age of 18 in each state who visited a dentist in 2014:")),
               leafletOutput("map"), p(), actionButton("recalc", "")),
       
       tabItem(tabName = "categories",
               titlePanel("Trends in oral health care across the nation in 2014"),
-              mainPanel(h4("Data analyzes adults aged 18+ that visited a dentist, split up by different age groups, races, income levels, genders, and levels of education."),
+              mainPanel(h4("Analysis of adults aged 18+ that visited a dentist, split up by different genders, age groups, races, income levels, and education levels."),
                 tabsetPanel(
                   
                   tabPanel("Gender",
                     fluidRow(
-                      box(title = "Comparing gender within a state:", status="success", solidHeader = TRUE, 
+                      box(title = "Within a state:", status="success", solidHeader = TRUE, 
                         inputPanel(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
-                      box(title = "Countrywide comparison of gender data:", status="warning", solidHeader = TRUE,  
+                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,  
                           plotOutput("countrywidegender")))),
                   
                   tabPanel("Age",
-                      box(title = "Comparing age within a state:", status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc2", label = "State:", choices = unique(age5$LocationDesc)),
                           plotOutput("age5plot"))),
-                      box(title = "Countrywide comparison of age data:", status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,
                           selectInput("age", label = "Age Group:", choices = unique(age$Break_Out), selected = "disp"),
                           plotOutput("countrywideage"))),
                   
                   tabPanel("Race",
-                      box(title = "Comparing race within a state:", status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc3", label = "State:", choices = unique(race$LocationDesc)),
                           plotOutput("raceplot"))),
-                      box(title = "Countrywide comparison of race data:", status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,
                           selectInput("race", label = "Race:", choices = unique(race2$Break_Out), selected = "disp"),
                           plotOutput("countrywiderace"))),
                   
                   tabPanel("Income",
-                      box(title = "Comparing income within a state:", status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc4", label = "State:", choices = unique(income$LocationDesc)),
                           plotOutput("incomeplot"))),
-                      box(title = "Countrywide comparison of income data:", status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", status = "warning", solidHeader = TRUE,
                           selectInput("income", label = "Income Level:", choices = unique(income$Break_Out), selected = "disp"),
                           plotOutput("countrywideincome"))),
                 
                   tabPanel("Education",
-                      box(title = "Comparing education levels within a state:", status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State:", choice = unique(education$LocationDesc)),
                           plotOutput("educationplot"))),
-                      box(title = "Countrywide comparison of education data:", status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", status = "warning", solidHeader = TRUE,
                           selectInput("education", label = "Education Level:", choices = unique(education$Break_Out), selected = "disp"),
                           plotOutput("countrywideeducation")))))),
               
