@@ -55,7 +55,7 @@ function(input, output, session) {
   output$countrywideage <- renderPlot({
       age5 %>%
         filter(Break_Out == input$age) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.5) + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
+        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.7) + theme(axis.text.x = element_text(angle = 60, hjust = 1))})
 
   output$raceplot <- renderPlot({
       race %>%
@@ -65,7 +65,7 @@ function(input, output, session) {
   output$countrywiderace <- renderPlot({
       race2 %>%
         filter(Break_Out == input$race) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.5) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
+        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.7) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
   
   output$incomeplot <- renderPlot({
       income %>%
@@ -75,7 +75,7 @@ function(input, output, session) {
   output$countrywideincome <- renderPlot({
       income %>%
         filter(Break_Out == input$income) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.5) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
+        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.7) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
   
   output$educationplot <- renderPlot({
       education %>%
@@ -85,7 +85,7 @@ function(input, output, session) {
   output$countrywideeducation <- renderPlot({
       education %>%
         filter(Break_Out == input$education) %>%
-        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.5) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
+        ggplot(aes(LocationAbbr, Data_Value)) + xlab("State") + ylab("Percent") + geom_bar(stat = "identity", width=.7) + theme(axis.text.x = element_text(angle = 60, hjust = 1)) + theme(legend.position="none")})
  
   output$countryplot1 <- renderPlot({
       countryplot%>% 

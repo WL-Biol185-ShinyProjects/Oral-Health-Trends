@@ -71,48 +71,57 @@ dashboardPage(
                   
                   tabPanel("Gender",
                     fluidRow(
-                      box(title = "Within a state:", status="success", solidHeader = TRUE, 
+                      column(width = 12,
+                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE, 
                         inputPanel(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
-                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,  
-                          plotOutput("countrywidegender")))),
+                      box(title = "Across the nation:", width = 7, status="warning", solidHeader = TRUE,  
+                          plotOutput("countrywidegender"))))),
                   
                   tabPanel("Age",
-                      box(title = "Within a state:", status="success", solidHeader = TRUE,
+                    fluidRow(
+                      column(width = 12,
+                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc2", label = "State:", choices = unique(age5$LocationDesc)),
                           plotOutput("age5plot"))),
-                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 10, status="warning", solidHeader = TRUE,
                           selectInput("age", label = "Age Group:", choices = unique(age$Break_Out), selected = "disp"),
-                          plotOutput("countrywideage"))),
+                          plotOutput("countrywideage"))))),
                   
                   tabPanel("Race",
-                      box(title = "Within a state:", status="success", solidHeader = TRUE,
+                    fluidRow(
+                      column(width = 12,
+                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc3", label = "State:", choices = unique(race$LocationDesc)),
                           plotOutput("raceplot"))),
-                      box(title = "Across the nation:", status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 10, status="warning", solidHeader = TRUE,
                           selectInput("race", label = "Race:", choices = unique(race2$Break_Out), selected = "disp"),
-                          plotOutput("countrywiderace"))),
+                          plotOutput("countrywiderace"))))),
                   
                   tabPanel("Income",
-                      box(title = "Within a state:", status="success", solidHeader = TRUE,
+                    fluidRow(
+                      column(width = 12,
+                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc4", label = "State:", choices = unique(income$LocationDesc)),
                           plotOutput("incomeplot"))),
-                      box(title = "Across the nation:", status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 10, status = "warning", solidHeader = TRUE,
                           selectInput("income", label = "Income Level:", choices = unique(income$Break_Out), selected = "disp"),
-                          plotOutput("countrywideincome"))),
+                          plotOutput("countrywideincome"))))),
                 
                   tabPanel("Education",
-                      box(title = "Within a state:", status="success", solidHeader = TRUE,
+                    fluidRow(
+                      column(width = 12,
+                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State:", choice = unique(education$LocationDesc)),
                           plotOutput("educationplot"))),
-                      box(title = "Across the nation:", status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 10, status = "warning", solidHeader = TRUE,
                           selectInput("education", label = "Education Level:", choices = unique(education$Break_Out), selected = "disp"),
-                          plotOutput("countrywideeducation")))))),
+                          plotOutput("countrywideeducation")))))))),
               
       
       tabItem(tabName = "2012v2014",
