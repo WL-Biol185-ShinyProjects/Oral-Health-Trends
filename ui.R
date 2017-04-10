@@ -103,14 +103,13 @@ dashboardPage(
                   
                   tabPanel("Income",
                     fluidRow(
-                      column(width = 12,
-                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", width = 4, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc4", label = "State:", choices = unique(income$LocationDesc)),
                           plotOutput("incomeplot"))),
-                      box(title = "Across the nation:", width = 10, status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 8, status = "warning", solidHeader = TRUE,
                           selectInput("income", label = "Income Level:", choices = unique(income$Break_Out), selected = "disp"),
-                          plotOutput("countrywideincome"))))),
+                          plotOutput("countrywideincome")))),
                 
                   tabPanel("Education",
                     fluidRow(
