@@ -71,35 +71,32 @@ dashboardPage(
                   
                   tabPanel("Gender",
                     fluidRow(
-                      column(width = 12,
-                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE, 
+                      box(title = "Within a state:", width = 4, status="success", solidHeader = TRUE, 
                         inputPanel(
                           selectInput("LocationDesc1", label = "State:", choices = unique(gender$LocationDesc)),  
                           plotOutput("genderplot"))),
-                      box(title = "Across the nation:", width = 7, status="warning", solidHeader = TRUE,  
-                          plotOutput("countrywidegender"))))),
+                      box(title = "Across the nation:", width = 8, status="warning", solidHeader = TRUE,  
+                          plotOutput("countrywidegender")))),
                   
                   tabPanel("Age",
                     fluidRow(
-                      column(width = 12,
-                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", width = 4, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc2", label = "State:", choices = unique(age5$LocationDesc)),
                           plotOutput("age5plot"))),
-                      box(title = "Across the nation:", width = 10, status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 8, status="warning", solidHeader = TRUE,
                           selectInput("age", label = "Age Group:", choices = unique(age$Break_Out), selected = "disp"),
-                          plotOutput("countrywideage"))))),
+                          plotOutput("countrywideage")))),
                   
                   tabPanel("Race",
                     fluidRow(
-                      column(width = 12,
-                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", width = 4, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc3", label = "State:", choices = unique(race$LocationDesc)),
                           plotOutput("raceplot"))),
-                      box(title = "Across the nation:", width = 10, status="warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 8, status="warning", solidHeader = TRUE,
                           selectInput("race", label = "Race:", choices = unique(race2$Break_Out), selected = "disp"),
-                          plotOutput("countrywiderace"))))),
+                          plotOutput("countrywiderace")))),
                   
                   tabPanel("Income",
                     fluidRow(
@@ -113,14 +110,13 @@ dashboardPage(
                 
                   tabPanel("Education",
                     fluidRow(
-                      column(width = 12,
-                      box(title = "Within a state:", width = 6, status="success", solidHeader = TRUE,
+                      box(title = "Within a state:", width = 4, status="success", solidHeader = TRUE,
                         inputPanel(
                           selectInput("LocationDesc6", label = "State:", choice = unique(education$LocationDesc)),
                           plotOutput("educationplot"))),
-                      box(title = "Across the nation:", width = 10, status = "warning", solidHeader = TRUE,
+                      box(title = "Across the nation:", width = 8, status = "warning", solidHeader = TRUE,
                           selectInput("education", label = "Education Level:", choices = unique(education$Break_Out), selected = "disp"),
-                          plotOutput("countrywideeducation")))))))),
+                          plotOutput("countrywideeducation"))))))),
               
       
       tabItem(tabName = "2012v2014",
