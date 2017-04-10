@@ -42,7 +42,7 @@ dashboardPage(
                   
                   tabPanel("Health Complications",
                     fluidRow(
-                      box("Research shows that more than 90% of all systemic diseases have oral manifestations.",
+                      box("Research shows that more than 90% of all systemic diseases have oral manifestations.", width=10,
                           p(),
                           p("Click below to see a few examples."),
                           p(fluidPage(
@@ -51,7 +51,7 @@ dashboardPage(
                   
                   tabPanel("Solutions",
                     fluidRow(
-                      box("Seeing a dentist regularly helps maintain oral health while also allowing for your dentist to watch for developments that may point to other health issues.",
+                      box("Seeing a dentist regularly helps maintain oral health while also allowing for your dentist to watch for developments that may point to other health issues.", width=12, 
                           p(),
                           p("Click below to see tips on maintaining good oral hygiene."),
                           p(fluidPage(
@@ -125,8 +125,7 @@ dashboardPage(
                 mainPanel( 
                   tabsetPanel(
                     tabPanel("State Comparison of 2012 and 2014",
-                             box(title= "Countrywide comparison:", width=10
-                                 , status="success", solidHeader = TRUE,
+                             box(title= "Countrywide comparison:", width=10, status="success", solidHeader = TRUE,
                                  plotOutput("country", width=500, height = 600))),
                     tabPanel("Individual State Data",
                              box(title= "Statewide values:", width = 8, status="warning", solidHeader = TRUE,
