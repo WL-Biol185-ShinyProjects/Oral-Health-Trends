@@ -90,7 +90,7 @@ function(input, output, session) {
   output$countryplot1 <- renderPlot({
       countryplot%>% 
        filter(LocationDesc == input$LocationDesc5) %>% 
-       ggplot(aes(X2012, X2014, color = LocationDesc)) + xlab("2012") + ylab("2014") + geom_point() + guides(color=guide_legend(title = "State:"))})
+       ggplot(aes(X2012, X2014, color = LocationDesc)) + xlab("2012") + ylab("2014") + geom_point() + guides(color=guide_legend(title = "State:")) + theme(legend.position="none")})
   
   output$country<- renderPlot({
       countryplot%>%

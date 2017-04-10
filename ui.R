@@ -125,10 +125,11 @@ dashboardPage(
                 mainPanel( 
                   tabsetPanel(
                     tabPanel("State Comparison of 2012 and 2014",
-                             box(title= "Countrywide comparison:", status="success", solidHeader = TRUE,
+                             box(title= "Countrywide comparison:", width=10
+                                 , status="success", solidHeader = TRUE,
                                  plotOutput("country", width=500, height = 600))),
                     tabPanel("Individual State Data",
-                             box(title= "Statewide values:", status="warning", solidHeader = TRUE,
+                             box(title= "Statewide values:", width = 8, status="warning", solidHeader = TRUE,
                                  inputPanel(
                                    selectInput("LocationDesc5", label = "State", choices = unique(countryplot$LocationDesc)),
                                    plotOutput("countryplot1", width = 400, height= 500)))))))),
