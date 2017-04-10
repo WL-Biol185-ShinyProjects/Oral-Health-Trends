@@ -17,6 +17,8 @@ education <- read.csv("education.csv")
 countryplot <- read.csv("countryplot.csv")
 newtable.data_value <- read.csv("newtable.data_value.csv")
 newtable <- read.csv("newtable.csv")
+dental_data_RAW <- read.csv("dental_data_RAW.csv")
+
 
 function(input, output, session) {
 
@@ -135,7 +137,7 @@ function(input, output, session) {
     
     output$downloadTable <- downloadHandler( filename = "oralhealthdata.txt",
                                              content = function(file) {
-                                               write.table(dental_data_RAW, file=file)
+                                               write.csv(dental_data_RAW, file=file)
                                              })
                                              
 }
